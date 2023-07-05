@@ -1,0 +1,72 @@
+@media screen and (max-width: 768px) {
+
+
+	.slider-img-body {
+		height: auto;
+	}
+
+
+	.slider-links p {
+   font-size: 25px;
+ 
+}
+	
+}
+
+@media screen and (max-width: 425px) {
+
+
+	.slider-links p {
+   font-size: 15px;
+ 
+}
+
+	
+}
+@media screen and (max-width: 375px) {
+
+
+
+.arrow-left {
+  left: 1px;
+}
+
+.arrow-right {
+  right: 1px;
+}
+	
+
+	.arrow {
+ 
+  width: 25px;
+  height: 25px;
+
+}
+
+
+}
+@media screen and (max-width: 320px) {
+
+
+	.slider-links p {
+   font-size: 12px;
+ 
+}
+.arrow-left {
+  left: -6px;
+}
+
+.arrow-right {
+  right: -6px;
+}
+	
+
+	.arrow {
+ 
+  width: 20px;
+  height: 20px;
+
+}
+
+
+}

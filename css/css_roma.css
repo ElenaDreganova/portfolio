@@ -1,0 +1,160 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500&display=swap');
+
+.wrapper {
+	max-width: 1024px;
+	margin: 0 auto;
+	text-decoration: none;
+}
+
+a, ul, li {
+	text-decoration: none;
+	margin: 0;
+	padding: 0;
+}
+
+
+/*HEADER*/
+/*Чтобы нормально вставился следующий нижний слок*/
+.header_wrapper {
+	/*height: 598px;*/
+	min-height: 598px;
+	outline: 0px solid blue;
+}
+
+/*Блюр*/
+.block__header-blur,
+.block__header-bg {
+	position: absolute; /*чтобы прописать z-index*/
+	top: 0;
+	left: 0;
+	width: 100%;
+	max-height: 605px;
+	height: 100%;
+	-moz-background-size: 100%; /* Firefox 3.6+ */
+    -webkit-background-size: 100%; /* Safari 3.1+ и Chrome 4.0+ */
+    -o-background-size: 100%; /* Opera 9.6+ */
+    background-size: 100%; /* Современные браузеры */
+}
+
+/*Блур*/
+.block__header-blur {
+	background: url("../img/img_roma/bg-circle-blured.jpg_") no-repeat center center fixed;
+   background-size: cover;
+	z-index: 0;
+	outline: 0px solid orange;
+}
+
+/*Полосы*/
+.block__header-bg {
+	background: url("../img/img_roma/bg.png") no-repeat;
+	background-size: cover;
+	z-index: 0;
+	outline: 0px solid pink;
+}
+
+
+
+/*HEADER-CONTENT*/
+.block__header {
+	position: relative;
+	margin-top: 40px;
+	height: 400px;
+	display: flex;
+
+	font-family: 'Inter';
+	font-style: normal;
+	font-weight: 400;
+	font-size: 16px;
+	line-height: 24px;
+	color: #7893B0;
+	
+	outline: 0px solid red;
+}
+
+/*Искаженный прямоугольник на фоне*/
+.block__header-polygon {
+	position: absolute;
+	width: 100%;
+	height: 400px;
+	background-color: purple;
+	background: linear-gradient(6.2deg, rgba(148, 96, 19, 0.08) -17.58%, rgba(183, 152, 104, 0.09) 115.29%, rgba(244, 248, 249, 0.35) 128.38%);
+	mix-blend-mode: normal;
+	clip-path: polygon(3% 0, 97% 4%, 100% 93%, 0 100%);
+	border-radius:  50px 100px 80px 20px;
+	z-index: -1;
+	outline: 0px solid yellow;
+}
+
+/*Заголовок, текст, кнопки, ссылка*/
+.block__header-content {
+	margin: 60px 0 0 80px;
+	width: 55%;
+
+	outline: 0px solid green;
+}
+
+
+/*Заголовок*/
+.header__main-title {
+	font-family: 'Inter';
+	font-style: normal;
+	font-weight: 500;
+	font-size: 30px;
+	line-height: 36px;
+	background: linear-gradient(93.27deg, #A98A78 -0.15%, #A98A78 -0.14%, #B69A80 77.98%);
+	-webkit-background-clip: text;
+	-webkit-text-fill-color: transparent;
+	background-clip: text;
+	text-fill-color: transparent;
+}
+
+/*Основной текст*/
+.header__main-text {
+	margin: 0
+}
+
+/*Кнопки*/
+.header-btn__downloadCV,
+.header-btn__appoinment {
+	margin: 24px 0 32px 0;
+	display: inline-block;
+	padding: 12px 24px;
+	color: rgba(26, 156, 255, 1);
+	border: 1px solid rgba(26, 156, 255, 1);
+	border-radius: 5px;
+}
+
+/*Кнопки*/
+.header-btn__downloadCV:hover,
+.header-btn__appoinment:hover {
+	cursor: pointer;
+	color: white;
+	background-color: rgba(26, 156, 255, 1);
+	border: 1px solid rgba(26, 156, 255, 1);
+}
+
+/*Кн. Загрузить*/
+.header-btn__downloadCV{
+	margin-right: 12px;
+}
+ 
+/*Ссылка available*/
+.available {
+	/*display: inline-block;*/
+	color: rgba(120, 147, 176, 1);
+	font-weight: 400;
+	font-size: 14px;
+	line-height: 20px;
+	vertical-align: super;
+}
+
+/*Фото профиля*/
+.block__photo {
+	position: absolute;
+	right: 0;
+	top: -55px;
+}
+
+.block__photo_resp {
+	display: none;
+}

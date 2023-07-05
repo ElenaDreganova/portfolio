@@ -1,0 +1,214 @@
+
+/*Основные стили*/
+/*Ограничить контент по ширине*/
+.container2 {
+	max-width: 1024px;
+	margin: 0px auto;
+	padding: 0px 10px;
+}
+
+/*HEADER*/
+.header {
+	/*Фиксированная шапка при скролле*/
+	position: fixed;
+	width: 100%;
+	top: 0;
+	left: 0;
+	z-index: 9999; /*большой, чтобы накрыла весь контент, чтобы было поверх него*/
+}
+
+/*Плашка*/
+.header:before {
+	content: '';
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%; 
+	height: 100%;
+	background-color: #EFF3F3; 
+	z-index: 2; /*Бургер-меню будет открываться под этой плашкой*/
+}
+
+.header__body {
+	/*В ытащить наверх контентную часть шапки*/
+	position: relative;
+	display: flex;
+	justify-content: space-between; 
+	height: 80px; 
+	align-items: center; 
+}
+.header__logo {
+	/*Размер картинки.*/
+	flex: 0 0 300px;
+	overflow: hidden;
+	position: relative;
+	z-index: 300;
+}
+.header__logo img {
+	min-width: 100%; 
+	dispaly: block; 
+}
+
+.header__burger {
+	display: none; /*скрыть бургер до медиазапроса - пока ширина >= 768px*/
+}
+.header__menu {}
+
+/*верстка самого меню*/
+.header__list {
+	display: flex;
+	position: relative; 
+	z-index: 2; /*поднять список меню наверх*/
+}
+.header__list li {
+	list-style: none; /*убрать точки с лишек*/
+	margin: 0px 0px 0px 20px;
+}
+.header__link {
+	font-size: 18px;
+	text-decoration: none;
+	font-style: normal;
+	font-weight: 400;
+	font-size: 18px;
+	line-height: 20px;
+	align-items: center;
+	color: #7893B0;
+}
+
+.socialWebs a {
+	margin: 0px 0px 0px 15px;
+}
+
+/*МЕДИА для бургера*/
+/*Адаптив (бургер) делаем на мобильных версиях девайса - это все, что меньше 768px - это iPad (планшет)*/
+@media (max-width: 767px) {
+	.header__body {
+		/*Уменьшить высоту шапки*/
+		height: 50px;
+	}
+	.header__logo {
+	/*Уменьшаем высоту картинки для мобильных устройств*/
+		flex: 0 0 255px; 
+	}
+
+	.header__burger {
+		display: block; /*показать бургер меню*/
+		position: relative;
+		width: 30px;
+		height: 20px;
+		position: relative;
+		z-index: 30;
+	}
+
+	/*Рисуем линии значка бургера при помощи псевдоэлементов и span*/
+	/*Средняя полоса бургера*/
+	.header__burger span {
+		position: absolute;
+		background-color: #7893B0;
+		width: 100%;
+		height: 2px; /*ширина линии*/
+		left: 0;
+		top: 9px;
+		transition: all 0.3s ease 0s; /*Добавить плавность движущимся элементам*/
+	}
+
+	/*Верхняя и нижняя полоски бургера*/
+	.header__burger:before, 
+	.header__burger:after {
+		content: '';
+		background-color: #7893B0;/* цвет линий бургера */
+		position: absolute;
+		width: 100%;
+		height: 2px; /*ширина линии*/
+		left: 0; /*расположение бургера по горизонтали*/
+		transition: all 0.3s ease 0s; /*Добавить плавность движущимся элементам*/
+	}
+	/*Верхняя полоса бургера*/
+	.header__burger:before {
+		top: 0; /*верхняя полоса сверху*/
+	}
+	/*Нижняя полоса бургера*/
+	.header__burger:after {
+		bottom: 0; /*нижняя полоса снизу*/
+	}
+
+	/*При клике на бургер (добавляется класс active)*/
+	.header__burger.active:before { 
+		/*развернуть на 45 градусов*/
+		transform: rotate(45deg);
+		top: 9px;
+	}
+	.header__burger.active:after { 
+		/*развернуть на -45 градусов*/
+		transform: rotate(-45deg);
+		bottom: 9px;
+	}
+	.header__burger.active span {
+		transform: scale(0); /*Скрыть среднюю палочку бургера*/
+	}
+
+	/*Меню список*/
+	.header__menu {
+		position: fixed;
+		top: -120%; /*Убрать полностью меню наверх, чтобы меню появлялось сверху*/
+		left: 0;
+		width: 100%;
+		height: 100%;
+		overflow: auto; /*Добавть скрол в меню, если оно не влазит в размер экрана, например, если перевернуть девайс*/
+		transition: all 0.3s ease 0s; /*Добавить плавность движущимся элементам*/
+		background-color: #F6FAFC; /*Заливка фона выпадающего меню*/
+		padding: 100px 10px 20px 65px; /*опускаем список меню ниже плашки и двигаем его в разные стороны*/
+	}
+
+	.header__menu.active {
+		top: 0; /*При нажатии на бургер, меню будет выезжать сверху*/
+	}
+
+	.header__list {
+		display: block; /*отключить display: flex - сделать из линии вертикальный список */
+	}
+	.header__list li {
+		/*Убираем отступы влево и задаем отступы вниз*/
+		margin: 0px 0px 30px 0px;
+	}
+
+	.header__link {
+		font-size: 30px; /*Размер шрифта списка*/
+	}
+
+	/*Социальные сети*/
+	.socialWebs  {
+		margin: 0px 0px 0px 10px;
+	}
+	.socialWebs a:first-child {
+		margin: 0 ;
+	}
+}
+
+
+/*CONTENT*/
+.content {
+	/*Отступить контентом от шапки, т.к. шапка накрыла часть контента.
+	Т.к. высота .header__body = 80px, верхний паддинг делаем 100px*/
+	padding: 100px 0px 0px 0px; 
+}
+.content__text {
+	font-size: 18px;
+	line-height: 25px;
+}
+.content__text p {
+	margin: 0px 0px 20px 0px;
+}
+
+/*MEDIA для контента*/
+/*т.к. уменьшилась шапка, нужно сдвинуть и контент*/
+@media (max-width: 767px) {
+	/*Запретить контенту скролиться (блокировать прокрутку) при открытом меню*/
+	body.lock {
+		overflow: hidden;
+	}
+
+	.content {
+		padding: 70px 0px 0px 0px;
+	}
+}

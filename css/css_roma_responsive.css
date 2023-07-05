@@ -1,0 +1,143 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500&display=swap');
+
+/*1280 1024 768 480 375 320*/
+
+@media screen and (max-width: 950px) {
+
+	/*HEADER MAIN CONTENT*/
+	.block__header,
+	.block__header-blur,
+	.block__header-bg{
+		height: 700px;
+	}
+	.block__header-polygon {
+		height: 500px;
+	}
+	.block__header-content {
+		width: 50%;
+	}
+
+	.header__main-text {
+		width: 75%;
+	}
+
+	.header-btn__downloadCV,
+	.header-btn__appoinment {
+		display: block;
+		margin: 10px;
+		width: 60%;
+	}
+}
+
+@media screen and (max-width: 767px) {
+	.block__header-blur,
+	.block__header-bg {
+		background: none;
+	}
+
+	.header_wrapper {
+		min-height: 420px;
+	}
+
+
+	/*HEADER MAIN CONTENT*/
+	.block__header-polygon {
+		display: none;
+	}
+	.block__photo {
+		display: none;
+	}
+
+	.block__header {
+		display: block; /*отключиь flex*/
+		margin-top: 0;
+	}
+
+	.block__header-content {
+		margin: 0 auto;
+		width: 80%;
+	}
+
+	.block__header-content * {
+		margin: 20px auto;
+	}
+	
+	.header__main-text {
+		width: 100%;
+		margin: 0;
+		text-align: justify;
+	}
+
+	/*Кнопки*/
+	.header-btn__downloadCV,
+	.header-btn__appoinment {
+		width: 100%;
+	}
+
+	/*Зеленая точка*/
+	.ellipse_link img {
+		margin: 0;
+	}
+	/*Текст после зеленой точкич*/
+	.available {
+		font-size: 12px;
+	}
+
+	/*Фото профлия*/
+	.block__photo_resp {
+		position: relative;
+		max-width: 767px;
+		width: 100%;
+		display: block;
+		z-index: -1;
+	}
+	
+	.profile_photo_pesp {
+		max-width: 100%;
+		display: block;
+		margin: 0 auto;
+	}
+
+	/*Полигон*/
+	.block__header-polygon_resp {
+		position: absolute;
+		top: 100px;
+		width: 100%;
+		height: 400px;
+		background-color: purple;
+		background: linear-gradient(6.2deg, rgba(148, 96, 19, 0.08) -17.58%, rgba(183, 152, 104, 0.09) 115.29%, rgba(244, 248, 249, 0.35) 128.38%);
+		mix-blend-mode: normal;
+		clip-path: polygon(3% 0, 97% 4%, 100% 93%, 0 100%);
+		border-radius:  50px 100px 80px 20px;
+		z-index: -1;
+		outline: 0px solid yellow;
+	}
+}
+
+@media screen and (max-width: 650px) {
+	.header_wrapper {
+		min-height: 450px;
+	}
+}
+
+@media screen and (max-width: 517px) {
+	.header_wrapper {
+		min-height: 480px;
+	}
+}
+
+@media screen and (max-width: 469px) {
+	.header_wrapper {
+		min-height: 530px;
+	}
+	.block__header-polygon_resp {
+		height: 280px;
+	}
+}
+@media screen and (max-width: 364px) {
+	.header_wrapper {
+		min-height: 590px;
+	}
+}
+
+
